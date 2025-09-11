@@ -23,7 +23,7 @@ select * from Employees;
 delete from Departments where DepartmentID=2;
 select * from Employees;
 
-
+select EmployeeName, sum(salary) from Employees;
 drop table AuditLog;
 create table AuditLog(
 AuditID int auto_increment primary key, 
@@ -58,3 +58,4 @@ select * from Departments;
 insert into Departments values(2,"HR");
 
 select * from AuditLog;
+
