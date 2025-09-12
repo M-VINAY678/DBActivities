@@ -8,13 +8,13 @@ create function annual_salary(empID int)
 Returns int
 Deterministic
 Begin
-   Declare monthlySalary Int;
+   Declare annualSalary Int;
    Declare continue handler for NOT FOUND
    Begin
-      set monthlySalary=null;
+      set annualSalary=null;
    End;
-   select (monthly_salary*12) into monthlySalary from EmployeesForFunctions where EmployeeId=empID;
-   return monthlySalary;
+   select (monthly_salary*12) into annualSalary from EmployeesForFunctions where EmployeeId=empID;
+   return annualSalary;
 End;$$
 Delimiter ;
 select annual_salary(10001) as "Annual Salary";
